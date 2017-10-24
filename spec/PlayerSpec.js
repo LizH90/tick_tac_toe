@@ -4,10 +4,10 @@ describe("Player", function() {
 
 
   beforeEach(function() {
-    player = new Player();
+    player = new Player("X");
   });
 
-  it("blah blah", function() {
+  it("player move is added to the board", function() {
     player.play("game1");
     expect(player.game).toEqual("game1");
   });
