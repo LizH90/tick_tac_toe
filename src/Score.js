@@ -3,19 +3,24 @@
     this.game = game;
   };
 
+  Score.prototype.splitRows = function(board) {
+
+  };
+
   Score.prototype.calculateRows = function(board) {
-    var row1 = board.slice(0,3);
-    var row2 = board.slice(3,6);
-    var row3 = board.slice(6,9);
-    if (row1.includes(0)) {
-      console.log("if row includes 0")
-      return "Next players turn";
-    } else if (row1[0]=== (row1[1] && row1[2])) {
+    if ((board[0] != 0) && (board[0] === (board[1] && board[2]))) {
+      console.log("row1")
+      return "You have won!";
+    } else if ((board[3] != 0) && (board[3] === (board[4] && board[5]))) {
+      console.log("row2")
+        return "You have won!";
+    } else if ((board[6] != 0) && (board[6] === (board[7] && board[8]))) {
+      console.log("row3")
       return "You have won!";
     } else {
       return "Next players turn";
     }
   };
 //
-  exports.Score = Score;
+exports.Score = Score;
 })(this);
